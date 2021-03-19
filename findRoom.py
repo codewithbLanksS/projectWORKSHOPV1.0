@@ -4,6 +4,7 @@ from firebase import firebase
 print("1.Private room")
 print("2.Package room")
 print("3.Group room")
+print("#Press enter for see all room")
 x = input("Input you TYPE of room you want to see:  ")
 
 firebase = firebase.FirebaseApplication(
@@ -27,8 +28,5 @@ elif x == "3":
     result = firebase.get("/Hotel_room/GroupROOM", room_id)
     print(result)
 else:
-    print("ERROR")
-
-
-result = firebase.get("/Hotel_room", room_id)
-print(result)
+    result = firebase.get("/Hotel_room", "")
+    print(result)
